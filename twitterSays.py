@@ -1,5 +1,5 @@
 import os, time
-import cPickle as pickle
+import pickle as pickle #"import cPickle as pickle" - for python2
 import twython as Twython
 from urllib.parse import quote  #"from urllib import quote" - for python2
 from SETTINGS import *

@@ -1,7 +1,7 @@
 import os, time
 import cPickle as pickle
 import twython as Twython
-from urllib import quote
+from urllib.parse import quote  #"from urllib import quote" - for python2
 from SETTINGS import *
 
 api = Twython.Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
@@ -40,7 +40,7 @@ def main():
     if number_of_tweets > 0:
         for i in reversed(range(0,number_of_tweets)):
             if user_timeline[i]['text']:
-                print user_timeline[i]['text']
+                print (user_timeline[i]['text'])
                 send_message(user_timeline[i]['text'])
                 time.sleep(4)
         latest_tweet_id = user_timeline[0]['id']
